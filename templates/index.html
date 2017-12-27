@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Torrent Exctract</title>
+	<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="text-center">
+			<a href="/">
+				<img src="static/skull.png" />
+			</a>
+			<h3>Torrent Extractor</h3>
+		</div>
+		<form action="/extract" method="get">
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-8 input-group">
+					<input
+						name="url"
+						class="form-control"
+						placeholder="Cole aqui a URL"
+						pattern="https?://w{3}.*"
+					/>
+					<span class="input-group-btn">
+						<button class="btn btn-primary">Extrair</button>
+					</span>
+				</div>
+				<div class="col-2"></div>
+			</div>
+			<div class="row">
+				<div class="col-2"></div>
+				<div id="text-help" class="col-8">
+					<pre>A URL deve começar com http://www ou https://www</pre>
+				</div>
+				<div class="col-2"></div>
+			</div>
+		</form>
+	</div>
+</body>
+{% block body %}{% endblock %}
+
+</html>

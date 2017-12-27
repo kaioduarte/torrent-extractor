@@ -1,0 +1,27 @@
+{% extends "index.html"  %}
+{% block body %}
+	<div>
+		<div class="col-2"></div>
+		<div class="container custom-container col-6">
+			{% if links %}
+				{% for key, value in links.items() %}
+				<ul class="list-inline">
+					{{ loop.index|string + ") " }}
+						{% for i in range(value|length) %}
+							<li class="list-inline-item">
+								<a href={{ value[i] }}>{{ "Link " + (i + 1)|string }}</a>
+							</li>
+						{% endfor %}
+				</ul>
+				{% endfor %}
+			<div class="col-2"></div>
+			{% else %}
+				<div class="text-center">
+					<p class="alert alert-danger">
+						{{"Nenhum link foi encontrado :/"}}
+					</p>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
